@@ -7,8 +7,11 @@ import java.util.List;
 
 @Component
 public class Validator {
-    @Autowired
     List<IPasswordValidationRule> passwordValidationRules;
+
+    public Validator(List<IPasswordValidationRule> passwordValidationRules) {
+        this.passwordValidationRules = passwordValidationRules;
+    }
 
     public List<String> validatePassword(String password){
         List<ValidationResult> results = new ArrayList<>();

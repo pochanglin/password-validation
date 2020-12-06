@@ -1,37 +1,52 @@
 package com.example.passwordvalidation.services;
 
 import com.example.passwordvalidation.exception.PasswordInValidException;
+import com.example.passwordvalidation.rules.Validator;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.mockito.Mockito;
 
-@SpringBootTest
+import java.util.ArrayList;
+import java.util.List;
+
+
 class PasswordServiceTest {
-    @Autowired
+    Validator validator;
+
     PasswordService passwordService;
 
-    @Test
-    void testValidPassword(){
-        final String password = "foo1234";
+    @BeforeEach
+    void setUp(){
+        validator = Mockito.mock(Validator.class);
+        passwordService = new PasswordService(validator);
+    }
 
-        Assertions.assertTrue(
-                passwordService.isValidPassword(password)
+    @Test
+    void testNotThrowException(){
+        final String password = "";
+
+        Mockito.when(validator.validatePassword(password))
+                .thenReturn(new ArrayList<>());
+
+        Assertions.assertDoesNotThrow(
+                () -> passwordService.isValidPassword(password)
         );
     }
 
     @Test
-    void testInValidPassword(){
-        final String password = "FooFoo !";
+    void testThrowException(){
+        final String password = "";
 
-        PasswordInValidException ex = Assertions.assertThrows(
+        List<String> errors = new ArrayList<>();
+        errors.add("this is mock error!");
+
+        Mockito.when(validator.validatePassword(password))
+                .thenReturn(errors);
+
+        Assertions.assertThrows(
                 PasswordInValidException.class,
                 () -> passwordService.isValidPassword(password)
-        );
-
-        Assertions.assertEquals(
-                6,
-                ex.getErrors().size()
         );
     }
 }
