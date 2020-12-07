@@ -16,4 +16,9 @@ public class PasswordInValidException extends RuntimeException {
     public List<String> getErrors() {
         return errors;
     }
+
+    @Override
+    public String toString() {
+        return super.toString() + errors.toString();
+    }
 }
