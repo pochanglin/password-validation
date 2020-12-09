@@ -37,10 +37,11 @@ class PasswordControllerIntegrationTest {
 
     @Test
     void testNullPassword(){
-        Password password = null;
+        Password password = new Password();
+        password.setPassword(null);
 
         Assertions.assertThrows(
-                NullPointerException.class,
+                PasswordInValidException.class,
                 () -> passwordController.isValidPassword(password));
     }
 
