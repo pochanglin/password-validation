@@ -19,7 +19,7 @@ class PasswordServiceTest {
     @BeforeEach
     void setUp(){
         validator = Mockito.mock(Validator.class);
-        passwordService = new PasswordService(validator);
+        passwordService = new PasswordServiceImpl(validator);
     }
 
     @Test

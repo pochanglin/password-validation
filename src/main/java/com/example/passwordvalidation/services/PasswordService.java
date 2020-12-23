@@ -1,23 +1,7 @@
 package com.example.passwordvalidation.services;
 
-import com.example.passwordvalidation.exception.PasswordInValidException;
-import com.example.passwordvalidation.rules.Validator;
-import org.springframework.stereotype.Service;
-import java.util.List;
+public interface PasswordService {
 
-@Service
-public class PasswordService {
-    Validator validator;
-
-    public PasswordService(Validator validator) {
-        this.validator = validator;
-    }
-
-    public void isValidPassword(String password){
-        List<String> errors = validator.validatePassword(password);
-        if (errors.size() > 0){
-            throw new PasswordInValidException("password validate fail",errors);
-        }
-    }
+    void isValidPassword(String password);
 
 }
