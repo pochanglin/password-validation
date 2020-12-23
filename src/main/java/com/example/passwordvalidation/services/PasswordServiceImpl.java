@@ -7,7 +7,7 @@ import java.util.List;
 
 @Service
 public class PasswordServiceImpl implements PasswordService{
-    Validator validator;
+    private final Validator validator;
 
     public PasswordServiceImpl(Validator validator) {
         this.validator = validator;

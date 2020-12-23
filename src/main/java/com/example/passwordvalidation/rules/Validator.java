@@ -1,13 +1,12 @@
 package com.example.passwordvalidation.rules;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import java.util.ArrayList;
 import java.util.List;
 
 @Component
 public class Validator {
-    List<IPasswordValidationRule> passwordValidationRules;
+    private final List<IPasswordValidationRule> passwordValidationRules;
 
     public Validator(List<IPasswordValidationRule> passwordValidationRules) {
         this.passwordValidationRules = passwordValidationRules;
