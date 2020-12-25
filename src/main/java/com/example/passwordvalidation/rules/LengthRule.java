@@ -1,14 +1,12 @@
 package com.example.passwordvalidation.rules;
 
 public class LengthRule implements IPasswordValidationRule {
-    private final int minLength;
-    private final int maxLength;
+    private static final int minLength = 5;
+    private static final int maxLength = 12;
     private final String errorMsg;
 
-    public LengthRule(int minLength, int maxLength, String errorMsg) {
-        this.minLength = minLength;
-        this.maxLength = maxLength;
-        this.errorMsg = errorMsg;
+    public LengthRule(String errorMsg) {
+        this.errorMsg = String.format(errorMsg,minLength,maxLength);
     }
 
     @Override

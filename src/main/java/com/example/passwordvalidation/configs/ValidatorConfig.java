@@ -12,12 +12,6 @@ import java.util.List;
 @PropertySource("classpath:validator.properties")
 public class ValidatorConfig {
 
-    @Value("${password.length.min}")
-    private int minLength;
-
-    @Value("${password.length.max}")
-    private int maxLength;
-
     @Value("${password.length.error}")
     private String lengthErrorMsg;
 
@@ -60,7 +54,7 @@ public class ValidatorConfig {
     @Bean
     public List<IPasswordValidationRule> getValidationStrategies(){
         List<IPasswordValidationRule> list = new ArrayList<>();
-        list.add(new LengthRule(minLength, maxLength, lengthErrorMsg));
+        list.add(new LengthRule(lengthErrorMsg));
         list.add(new DigitRule(digitNum, digitErrorMsg));
         list.add(new LowercaseRule(lowercaseNum, lowercaseErrorMsg));
         list.add(new UppercaseRule(uppercaseNum, uppercaseErrorMsg));

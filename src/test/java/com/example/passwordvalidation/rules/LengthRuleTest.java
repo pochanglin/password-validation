@@ -10,7 +10,7 @@ class LengthRuleTest {
     @BeforeEach
     void setUp(){
         // Must be between 5 and 12 characters in length
-        lengthRule = new LengthRule(5,  12, "");
+        lengthRule = new LengthRule("");
     }
 
     @Test
