@@ -9,7 +9,7 @@ class WhitespaceRuleTest {
 
     @BeforeEach
     void setUp() {
-        whitespaceRule = new WhitespaceRule(false, "");
+        whitespaceRule = new WhitespaceRule("");
     }
 
     @Test

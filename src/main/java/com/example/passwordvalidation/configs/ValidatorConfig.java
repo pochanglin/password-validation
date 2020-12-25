@@ -30,9 +30,6 @@ public class ValidatorConfig {
     @Value("${password.sequence-repeat.error}")
     private String sequenceRepeatErrorMsg;
 
-    @Value("${password.white-space.is-contain}")
-    private boolean whiteSpaceIsContain;
-
     @Value("${password.white-space.error}")
     private String whiteSpaceErrorMsg;
 
@@ -48,7 +45,7 @@ public class ValidatorConfig {
         list.add(new UppercaseRule(uppercaseErrorMsg));
         list.add(new SpecialCharacterRule(specialCharacterErrorMsg));
         list.add(new SequenceRepeatRule(sequenceRepeatErrorMsg));
-        list.add(new WhitespaceRule(whiteSpaceIsContain,whiteSpaceErrorMsg));
+        list.add(new WhitespaceRule(whiteSpaceErrorMsg));
         list.add(new AlphanumericRule(alphanumericErrorMsg));
         return list;
     }

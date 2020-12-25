@@ -1,11 +1,10 @@
 package com.example.passwordvalidation.rules;
 
 public class WhitespaceRule implements IPasswordValidationRule {
-    private final boolean isContain;
+    private static final boolean isContain = false;
     private final String errorMsg;
 
-    public WhitespaceRule(boolean isContain, String errorMsg) {
-        this.isContain = isContain;
+    public WhitespaceRule(String errorMsg) {
         this.errorMsg = errorMsg;
     }
 
