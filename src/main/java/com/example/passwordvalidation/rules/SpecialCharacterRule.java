@@ -2,12 +2,11 @@ package com.example.passwordvalidation.rules;
 
 public class SpecialCharacterRule extends CharacterRule {
     public static final String SPECIAL = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
-    private final int num;
+    private static final int num = 0;
     private final String errorMsg;
 
-    public SpecialCharacterRule(int num, String errorMsg) {
-        this.num = num;
-        this.errorMsg = errorMsg;
+    public SpecialCharacterRule(String errorMsg) {
+        this.errorMsg = String.format(errorMsg,num);
     }
 
     @Override
