@@ -6,19 +6,17 @@ import org.junit.jupiter.api.Test;
 
 class UppercaseRuleTest {
     UppercaseRule uppercaseRule;
-    UppercaseRule noUppercaseRule;
 
     @BeforeEach
     void setUp() {
-        uppercaseRule = new UppercaseRule(1,"");
-        noUppercaseRule = new UppercaseRule(0,"");
+        uppercaseRule = new UppercaseRule("");
     }
 
     @Test
     void testContainUppercase(){
         final String password = "Foo1";
 
-        Assertions.assertTrue(
+        Assertions.assertFalse(
                 uppercaseRule.validatePassword(password).isValid()
         );
     }
@@ -27,17 +25,8 @@ class UppercaseRuleTest {
     void testNotContainUppercase(){
         final String password = "foo1";
 
-        Assertions.assertFalse(
+        Assertions.assertTrue(
                 uppercaseRule.validatePassword(password).isValid()
-        );
-    }
-
-    @Test
-    void testNoUppercaseRule(){
-        final String password = "Foo1";
-
-        Assertions.assertFalse(
-                noUppercaseRule.validatePassword(password).isValid()
         );
     }
 }

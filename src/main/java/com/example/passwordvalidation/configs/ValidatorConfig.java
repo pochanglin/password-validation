@@ -21,9 +21,6 @@ public class ValidatorConfig {
     @Value("${password.lowercase.error}")
     private String lowercaseErrorMsg;
 
-    @Value("${password.uppercase.num}")
-    private int uppercaseNum;
-
     @Value("${password.uppercase.error}")
     private String uppercaseErrorMsg;
 
@@ -51,7 +48,7 @@ public class ValidatorConfig {
         list.add(new LengthRule(lengthErrorMsg));
         list.add(new DigitRule(digitErrorMsg));
         list.add(new LowercaseRule(lowercaseErrorMsg));
-        list.add(new UppercaseRule(uppercaseNum, uppercaseErrorMsg));
+        list.add(new UppercaseRule(uppercaseErrorMsg));
         list.add(new SpecialCharacterRule(specialCharacterNum, specialCharacterErrorMsg));
         list.add(new SequenceRepeatRule(sequenceRepeatErrorMsg));
         list.add(new WhitespaceRule(whiteSpaceIsContain,whiteSpaceErrorMsg));
