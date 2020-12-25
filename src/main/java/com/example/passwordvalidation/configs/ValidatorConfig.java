@@ -18,9 +18,6 @@ public class ValidatorConfig {
     @Value("${password.digit.error}")
     private String digitErrorMsg;
 
-    @Value("${password.lowercase.num}")
-    private int lowercaseNum;
-
     @Value("${password.lowercase.error}")
     private String lowercaseErrorMsg;
 
@@ -53,7 +50,7 @@ public class ValidatorConfig {
         List<IPasswordValidationRule> list = new ArrayList<>();
         list.add(new LengthRule(lengthErrorMsg));
         list.add(new DigitRule(digitErrorMsg));
-        list.add(new LowercaseRule(lowercaseNum, lowercaseErrorMsg));
+        list.add(new LowercaseRule(lowercaseErrorMsg));
         list.add(new UppercaseRule(uppercaseNum, uppercaseErrorMsg));
         list.add(new SpecialCharacterRule(specialCharacterNum, specialCharacterErrorMsg));
         list.add(new SequenceRepeatRule(sequenceRepeatErrorMsg));

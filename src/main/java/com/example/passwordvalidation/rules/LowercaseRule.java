@@ -2,12 +2,11 @@ package com.example.passwordvalidation.rules;
 
 public class LowercaseRule extends CharacterRule{
     public static final String LOWERCASE = "abcdefghijklmnopqrstuvwxyz";
-    private final int num;
+    private static final int num = 1;
     private final String errorMsg;
 
-    public LowercaseRule(int num, String errorMsg) {
-        this.num = num;
-        this.errorMsg = errorMsg;
+    public LowercaseRule(String errorMsg) {
+        this.errorMsg = String.format(errorMsg,num);
     }
 
     @Override

@@ -6,12 +6,10 @@ import org.junit.jupiter.api.Test;
 
 class LowercaseRuleTest {
     LowercaseRule lowercaseRule;
-    LowercaseRule noLowercaseRule;
 
     @BeforeEach
     void setUp(){
-        lowercaseRule = new LowercaseRule(1,"");
-        noLowercaseRule = new LowercaseRule(0, "");
+        lowercaseRule = new LowercaseRule("");
     }
 
     @Test
@@ -29,15 +27,6 @@ class LowercaseRuleTest {
 
         Assertions.assertFalse(
                 lowercaseRule.validatePassword(password).isValid()
-        );
-    }
-
-    @Test
-    void testNoLowercaseRule(){
-        final String password = "p123";
-
-        Assertions.assertFalse(
-                noLowercaseRule.validatePassword(password).isValid()
         );
     }
 }
