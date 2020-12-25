@@ -2,12 +2,11 @@ package com.example.passwordvalidation.rules;
 
 public class DigitRule extends CharacterRule{
     public static final String DIGITS = "0123456789";
-    private final int num;
+    private static final int num = 1;
     private final String errorMsg;
 
-    public DigitRule(int num, String errorMsg) {
-        this.num = num;
-        this.errorMsg = errorMsg;
+    public DigitRule(String errorMsg) {
+        this.errorMsg = String.format(errorMsg,num);
     }
 
     @Override

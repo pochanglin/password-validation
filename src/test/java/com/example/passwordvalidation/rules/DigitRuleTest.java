@@ -6,12 +6,10 @@ import org.junit.jupiter.api.Test;
 
 class DigitRuleTest {
     DigitRule digitRule;
-    DigitRule noDigitRule;
 
     @BeforeEach
     void setUp(){
-        digitRule = new DigitRule(1,"");
-        noDigitRule = new DigitRule(0,"");
+        digitRule = new DigitRule("");
     }
 
     @Test
@@ -29,15 +27,6 @@ class DigitRuleTest {
 
         Assertions.assertFalse(
                 digitRule.validatePassword(password).isValid()
-        );
-    }
-
-    @Test
-    void testNoDigitRule(){
-        final String password = "foo2";
-
-        Assertions.assertFalse(
-                noDigitRule.validatePassword(password).isValid()
         );
     }
 }
