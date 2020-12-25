@@ -1,6 +1,7 @@
 package com.example.passwordvalidation.rules;
 
 public class UppercaseRule extends CharacterRule{
+    public static final String UPPERCASE = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     private final int num;
     private final String errorMsg;
 

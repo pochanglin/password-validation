@@ -9,14 +9,16 @@ public class AlphanumericRule extends CharacterRule {
 
     @Override
     public ValidationResult validatePassword(String password) {
+        final int len = password.length();
 
-        int totalMatching = getMatchingCharacters(LOWERCASE,password,password.length()).length()
-                + getMatchingCharacters(UPPERCASE,password,password.length()).length()
-                + getMatchingCharacters(DIGITS,password,password.length()).length()
-                + getMatchingCharacters(SPECIAL,password,password.length()).length();
+        int totalMatching = LowercaseRule.getMatchingCharacters(LowercaseRule.LOWERCASE,password,len).length()
+                        + UppercaseRule.getMatchingCharacters(UppercaseRule.UPPERCASE,password,len).length()
+                        + DigitRule.getMatchingCharacters(DigitRule.DIGITS,password,len).length()
+                        + SpecialCharacterRule.getMatchingCharacters(SpecialCharacterRule.SPECIAL,password,len).length();
 
-        boolean isValid = totalMatching == password.length();
-
-        return new ValidationResult(isValid,errorMsg);
+        return new ValidationResult(
+                totalMatching == len,
+                errorMsg
+        );
     }
 }

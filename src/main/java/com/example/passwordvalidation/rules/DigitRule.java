@@ -1,6 +1,7 @@
 package com.example.passwordvalidation.rules;
 
 public class DigitRule extends CharacterRule{
+    public static final String DIGITS = "0123456789";
     private final int num;
     private final String errorMsg;
 

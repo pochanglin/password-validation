@@ -1,10 +1,6 @@
 package com.example.passwordvalidation.rules;
 
 public abstract class CharacterRule implements IPasswordValidationRule {
-    protected static final String SPECIAL = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
-    protected static final String UPPERCASE = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    protected static final String LOWERCASE = "abcdefghijklmnopqrstuvwxyz";
-    protected static final String DIGITS = "0123456789";
 
     protected static String getMatchingCharacters(final String characters,
                                                   final String input,

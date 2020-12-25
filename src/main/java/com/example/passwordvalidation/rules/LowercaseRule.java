@@ -1,6 +1,7 @@
 package com.example.passwordvalidation.rules;
 
 public class LowercaseRule extends CharacterRule{
+    public static final String LOWERCASE = "abcdefghijklmnopqrstuvwxyz";
     private final int num;
     private final String errorMsg;
 
