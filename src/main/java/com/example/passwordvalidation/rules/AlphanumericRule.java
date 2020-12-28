@@ -11,10 +11,10 @@ public class AlphanumericRule extends CharacterRule {
     public ValidationResult validatePassword(String password) {
         final int len = password.length();
 
-        int totalMatching = LowercaseRule.getMatchingCharacters(LowercaseRule.LOWERCASE,password,len).length()
-                        + UppercaseRule.getMatchingCharacters(UppercaseRule.UPPERCASE,password,len).length()
-                        + DigitRule.getMatchingCharacters(DigitRule.DIGITS,password,len).length()
-                        + SpecialCharacterRule.getMatchingCharacters(SpecialCharacterRule.SPECIAL,password,len).length();
+        int totalMatching = getMatchingCharacters(LowercaseRule.LOWERCASE,password,len).length()
+                            + getMatchingCharacters(UppercaseRule.UPPERCASE,password,len).length()
+                            + getMatchingCharacters(DigitRule.DIGITS,password,len).length()
+                            + getMatchingCharacters(SpecialCharacterRule.SPECIAL,password,len).length();
 
         return new ValidationResult(
                 totalMatching == len,
