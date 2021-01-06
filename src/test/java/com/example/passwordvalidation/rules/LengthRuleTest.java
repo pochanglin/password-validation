@@ -16,27 +16,27 @@ class LengthRuleTest {
     @Test
     void verifyLessThan() {
         final String password = "1234";
-        Assertions.assertFalse(lengthRule.validatePassword(password).isValid());
+        Assertions.assertFalse(lengthRule.validate(password).isValid());
     }
 
     @Test
     void verifyGreaterThan() {
         String password = "0123456789123";
-        Assertions.assertFalse(lengthRule.validatePassword(password).isValid());
+        Assertions.assertFalse(lengthRule.validate(password).isValid());
     }
 
     @Test
     void verifyBetween() {
         String password = "123456";
-        Assertions.assertTrue(lengthRule.validatePassword(password).isValid());
+        Assertions.assertTrue(lengthRule.validate(password).isValid());
     }
 
     @Test
     void verifyContain() {
         String minPassword = "12345";
-        Assertions.assertTrue(lengthRule.validatePassword(minPassword).isValid());
+        Assertions.assertTrue(lengthRule.validate(minPassword).isValid());
         String maxPassword = "012345678912";
-        Assertions.assertTrue(lengthRule.validatePassword(maxPassword).isValid());
+        Assertions.assertTrue(lengthRule.validate(maxPassword).isValid());
     }
 
 }

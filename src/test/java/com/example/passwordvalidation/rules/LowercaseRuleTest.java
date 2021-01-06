@@ -17,7 +17,7 @@ class LowercaseRuleTest {
         final String password = "p123";
 
         Assertions.assertTrue(
-                lowercaseRule.validatePassword(password).isValid()
+                lowercaseRule.validate(password).isValid()
         );
     }
 
@@ -26,7 +26,7 @@ class LowercaseRuleTest {
         final String password = "P123";
 
         Assertions.assertFalse(
-                lowercaseRule.validatePassword(password).isValid()
+                lowercaseRule.validate(password).isValid()
         );
     }
 }

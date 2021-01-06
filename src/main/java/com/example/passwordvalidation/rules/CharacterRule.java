@@ -1,6 +1,6 @@
 package com.example.passwordvalidation.rules;
 
-public abstract class CharacterRule implements IPasswordValidationRule {
+public abstract class CharacterRule implements Rule {
 
     protected static String getMatchingCharacters(final String characters,
                                                   final String input,

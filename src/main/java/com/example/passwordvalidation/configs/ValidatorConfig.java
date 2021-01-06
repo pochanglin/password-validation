@@ -37,8 +37,8 @@ public class ValidatorConfig {
     private String alphanumericErrorMsg;
 
     @Bean
-    public List<IPasswordValidationRule> getValidationStrategies(){
-        List<IPasswordValidationRule> list = new ArrayList<>();
+    public List<Rule> getValidationStrategies(){
+        List<Rule> list = new ArrayList<>();
         list.add(new LengthRule(lengthErrorMsg));
         list.add(new DigitRule(digitErrorMsg));
         list.add(new LowercaseRule(lowercaseErrorMsg));

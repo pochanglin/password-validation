@@ -16,7 +16,7 @@ class SequenceRepeatRuleTest {
     void verifySequenceRepeatImmediately(){
         final String password = "foofoo1";
         Assertions.assertFalse(
-                sequenceRepeatRule.validatePassword(password).isValid()
+                sequenceRepeatRule.validate(password).isValid()
         );
     }
 
@@ -24,7 +24,7 @@ class SequenceRepeatRuleTest {
     void verifySequenceRepeatNotImmediately(){
         final String password = "foo1foo";
         Assertions.assertTrue(
-                sequenceRepeatRule.validatePassword(password).isValid()
+                sequenceRepeatRule.validate(password).isValid()
         );
     }
 

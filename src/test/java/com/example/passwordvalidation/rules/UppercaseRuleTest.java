@@ -17,7 +17,7 @@ class UppercaseRuleTest {
         final String password = "Foo1";
 
         Assertions.assertFalse(
-                uppercaseRule.validatePassword(password).isValid()
+                uppercaseRule.validate(password).isValid()
         );
     }
 
@@ -26,7 +26,7 @@ class UppercaseRuleTest {
         final String password = "foo1";
 
         Assertions.assertTrue(
-                uppercaseRule.validatePassword(password).isValid()
+                uppercaseRule.validate(password).isValid()
         );
     }
 }

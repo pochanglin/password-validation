@@ -10,7 +10,7 @@ public class DigitRule extends CharacterRule{
     }
 
     @Override
-    public ValidationResult validatePassword(String password) {
+    public ValidationResult validate(String password) {
         String matchingCharacters = getMatchingCharacters(DIGITS,password,password.length());
 
         boolean isValid = checkResult(num,matchingCharacters);

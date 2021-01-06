@@ -10,7 +10,7 @@ public class LowercaseRule extends CharacterRule{
     }
 
     @Override
-    public ValidationResult validatePassword(String password) {
+    public ValidationResult validate(String password) {
         String matchingCharacters = getMatchingCharacters(LOWERCASE,password,password.length());
 
         boolean isValid = checkResult(num,matchingCharacters);

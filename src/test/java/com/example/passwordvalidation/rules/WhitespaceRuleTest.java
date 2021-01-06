@@ -16,7 +16,7 @@ class WhitespaceRuleTest {
     void verifyWhitespaceContain(){
         String password = "m mon";
         Assertions.assertFalse(
-                whitespaceRule.validatePassword(password).isValid()
+                whitespaceRule.validate(password).isValid()
         );
     }
 
@@ -24,7 +24,7 @@ class WhitespaceRuleTest {
     void verifyWhitespaceNotContain(){
         String password = "m0mon";
         Assertions.assertTrue(
-                whitespaceRule.validatePassword(password).isValid()
+                whitespaceRule.validate(password).isValid()
         );
     }
 }

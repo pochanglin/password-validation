@@ -17,7 +17,7 @@ class SpecialCharacterRuleTest {
         final String password = "@123";
 
         Assertions.assertFalse(
-                characterRule.validatePassword(password).isValid()
+                characterRule.validate(password).isValid()
         );
     }
 
@@ -26,7 +26,7 @@ class SpecialCharacterRuleTest {
         final String password = "123";
 
         Assertions.assertTrue(
-                characterRule.validatePassword(password).isValid()
+                characterRule.validate(password).isValid()
         );
     }
 

@@ -17,7 +17,7 @@ class AlphanumericRuleTest {
         final String password = "foo1234我";
 
         Assertions.assertFalse(
-                alphanumericRule.validatePassword(password).isValid()
+                alphanumericRule.validate(password).isValid()
         );
     }
 
@@ -26,7 +26,7 @@ class AlphanumericRuleTest {
         final String password = "foo1234!@";
 
         Assertions.assertTrue(
-                alphanumericRule.validatePassword(password).isValid()
+                alphanumericRule.validate(password).isValid()
         );
     }
 }

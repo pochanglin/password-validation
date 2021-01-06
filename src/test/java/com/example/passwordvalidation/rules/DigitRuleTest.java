@@ -17,7 +17,7 @@ class DigitRuleTest {
         final String password = "foo2";
 
         Assertions.assertTrue(
-                digitRule.validatePassword(password).isValid()
+                digitRule.validate(password).isValid()
         );
     }
 
@@ -26,7 +26,7 @@ class DigitRuleTest {
         final String password = "foo";
 
         Assertions.assertFalse(
-                digitRule.validatePassword(password).isValid()
+                digitRule.validate(password).isValid()
         );
     }
 }

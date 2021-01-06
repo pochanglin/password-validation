@@ -6,16 +6,16 @@ import java.util.List;
 
 @Component
 public class Validator {
-    private final List<IPasswordValidationRule> passwordValidationRules;
+    private final List<Rule> passwordValidationRules;
 
-    public Validator(List<IPasswordValidationRule> passwordValidationRules) {
+    public Validator(List<Rule> passwordValidationRules) {
         this.passwordValidationRules = passwordValidationRules;
     }
 
     public List<String> validatePassword(String password){
         List<ValidationResult> results = new ArrayList<>();
-        for (IPasswordValidationRule rule : passwordValidationRules){
-            ValidationResult vr = rule.validatePassword(password);
+        for (Rule rule : passwordValidationRules){
+            ValidationResult vr = rule.validate(password);
             results.add(vr);
         }
 

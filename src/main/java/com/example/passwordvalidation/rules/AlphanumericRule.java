@@ -8,7 +8,7 @@ public class AlphanumericRule extends CharacterRule {
     }
 
     @Override
-    public ValidationResult validatePassword(String password) {
+    public ValidationResult validate(String password) {
         final int len = password.length();
 
         int totalMatching = getMatchingCharacters(LowercaseRule.LOWERCASE,password,len).length()
